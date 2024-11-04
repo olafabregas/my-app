@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import "./App.css";
+import { ThemeProvider } from "./ThemeContext";
+import Component2 from "./Component2";
+import ThemeToggle from "./ThemeToggle"; // Toggle component to switch themes
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider>
+        <ThemeToggle /> {/* Renders theme toggle button */}
+        <Component2 />
+      </ThemeProvider>
     </div>
   );
 }
